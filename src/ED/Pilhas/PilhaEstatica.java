@@ -17,6 +17,10 @@ public class PilhaEstatica {
         return this.topo == 0;
     }
 
+    public boolean isFull(){
+        return this.topo == this.vetor.length;
+    }
+
     public static void main(String[] args) {
         PilhaEstatica pe = new PilhaEstatica(5);
         System.out.println(pe.toString());
