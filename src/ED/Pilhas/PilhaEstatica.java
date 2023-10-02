@@ -2,7 +2,11 @@ package ED.Pilhas;
 
 public class PilhaEstatica {
     String[] vetor;
+<<<<<<< HEAD
     int topo;
+=======
+    int topo; //onde o próximo elemento irá entrar, ou seja, o índice.
+>>>>>>> b334af9 (Modificações na classe PilhaEstatica.java)
 
     public PilhaEstatica(int tam) {
         this.vetor = new String[tam];
