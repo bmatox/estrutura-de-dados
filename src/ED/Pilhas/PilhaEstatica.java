@@ -1,12 +1,10 @@
 package ED.Pilhas;
 
+import java.sql.SQLOutput;
+
 public class PilhaEstatica {
     String[] vetor;
-<<<<<<< HEAD
-    int topo;
-=======
     int topo; //onde o próximo elemento irá entrar, ou seja, o índice.
->>>>>>> b334af9 (Modificações na classe PilhaEstatica.java)
 
     public PilhaEstatica(int tam) {
         this.vetor = new String[tam];
@@ -21,9 +19,27 @@ public class PilhaEstatica {
         return this.topo == this.vetor.length;
     }
 
+    public boolean push(String str){
+    if(this.isFull()){
+        System.out.println("Pilha cheia!!!");
+        return false;
+    }
+    this.vetor[topo] = str;
+    this.topo++;
+    return true;
+    }
+
+    public String pop(){
+        if (this.isEmpty()){
+            return "Pilha vazia!!";
+        }
+        this.topo--;
+        return this.vetor[topo];
+    }
+
     public static void main(String[] args) {
         PilhaEstatica pe = new PilhaEstatica(5);
-        System.out.println(pe.toString());
-
+        pe.push("Bruno");
+        System.out.println(pe.isEmpty());
     }
 }
