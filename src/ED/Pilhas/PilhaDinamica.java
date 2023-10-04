@@ -55,27 +55,44 @@ public class PilhaDinamica {
         this.tamanho++;
     }
 
+    public int pop() {
+        if(this.isEmpty()){
+            System.out.println("Pilha está vazia!!!");
+            return -1;
+        }
+        int tmp = this.topo.getValor();
+        this.topo = this.topo.getProx();
+        this.tamanho--;
+        return tmp;
+    }
+
     public void imprimePilha(){
         if(this.isEmpty()){
             System.out.println("Pilha vazia!!");
             return;
         }
         No no = this.topo;
+        System.out.print("Elementos da pilha dinâmica: {");
         while (no.getProx() != null){
-            System.out.println(no.getValor() + ", ");
+            System.out.print(no.getValor() + ", ");
+            no = no.getProx();
         }
+        System.out.print(no.getValor() + "}");
     }
-    @Override
-    public String toString() {
-        return "PilhaDinamica{" +
-                "topo=" + topo +
-                ", tamanho=" + tamanho +
-                '}';
-    }
+
 
     public static void main(String[] args) {
         PilhaDinamica pd = new PilhaDinamica();
         System.out.println(pd.isEmpty());
+        pd.imprimePilha();
+        pd.push(5);
+        pd.push(3);
+        pd.push(11);
+        pd.imprimePilha();
+        System.out.println("");
+        pd.pop();
+        pd.pop();
+        pd.imprimePilha();
     }
 }
 
