@@ -29,12 +29,14 @@ public class PilhaEstatica {
     return true;
     }
 
-    public String pop(){
+    public void pop(){
         if (this.isEmpty()){
-            return "Pilha vazia!!";
+            System.out.println("Não removeu!");
+        } else {
+            this.topo--;
+            System.out.println("Estou retirando o valor " + this.vetor[topo] + " da pilha.");
         }
-        this.topo--;
-        return this.vetor[topo];
+
     }
 
     public static void main(String[] args) {
