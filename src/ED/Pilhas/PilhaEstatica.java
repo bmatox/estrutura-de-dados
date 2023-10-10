@@ -1,7 +1,5 @@
 package ED.Pilhas;
 
-import java.sql.SQLOutput;
-
 public class PilhaEstatica {
     String[] vetor;
     int topo; //onde o próximo elemento irá entrar, ou seja, o índice.
