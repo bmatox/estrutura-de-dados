@@ -32,18 +32,19 @@ public class Q1 {
     public int pop(){
         if (this.isEmpty()){
             System.out.println("Não removeu!");
+            return -1; //retorna um valor inválido para indicar que a pilha está vazia
         } else {
-            this.topo--;
-            System.out.println("Estou retirando o valor " + this.vetor[topo] + " da pilha.");
+            int valor = this.vetor[topo-1]; //guarda o valor do topo em uma variável auxiliar
+            this.topo--; //decrementa o topo
+            System.out.println("Estou retirando o valor " + valor + " da pilha.");
+            return valor; //retorna o valor removido
         }
-
-        return 0;
     }
 
     public void ordenaPilha() {
         int[] aux = new int[this.vetor.length];
         for(int i = 0; i < this.vetor.length; i++){
-            aux[i] = this.pop();
+            aux[i] = this.pop(); //desempilha os valores do vetor e armazena no vetor auxiliar
         }
         for (int i = 0; i < this.vetor.length; i++){
             for (int j = 0; j < this.vetor.length; j++){
@@ -54,6 +55,9 @@ public class Q1 {
                 }
             }
         }
+        for(int i = this.vetor.length - 1; i >= 0; i--){
+            this.push(aux[i]); //empilha os valores ordenados do vetor auxiliar no vetor original
+        }
     }
 
     public static void main(String[] args) {
@@ -62,6 +66,24 @@ public class Q1 {
         pe.push(7);
         pe.push(4);
         pe.push(2);
+        System.out.println("Pilha antes de ordenar:");
+
+        while(!pe.isEmpty()){
+            System.out.print(pe.pop() + " "); //desempilha e imprime cada elemento da pilha
+        }
         System.out.println();
+
+        pe.push(1); //empilha novamente os valores na pilha
+        pe.push(7);
+        pe.push(4);
+        pe.push(2);
+
+        pe.ordenaPilha(); //ordena a pilha em ordem crescente
+        System.out.println("Pilha depois de ordenar:");
+        while(!pe.isEmpty()){
+            System.out.print(pe.pop() + " "); //desempilha e imprime cada elemento da pilha ordenada
+        }
+        System.out.println();
+
     }
 }
