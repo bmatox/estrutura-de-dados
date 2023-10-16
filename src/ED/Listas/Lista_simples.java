@@ -1,4 +1,4 @@
-package ED;
+package ED.Listas;
 class Lista_simples {
     class No {
         private int valor;

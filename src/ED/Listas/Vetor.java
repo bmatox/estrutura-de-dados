@@ -1,4 +1,4 @@
-package ED;
+package ED.Listas;
 
 public class Vetor {
     private int tamanho; // o tamanho do vetor
