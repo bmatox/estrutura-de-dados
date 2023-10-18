@@ -70,25 +70,29 @@ class FilaDinamica {
     }
 
     public String toString() {
-        // se a fila estiver vazia, retorna uma string vazia
-        if (this.isEmpty()) {
-            return "";
+
+        String str = "";
+        No n1 = this.getInicio();
+        while(n1 != null){
+            str += n1.getValor() + ", ";
+            n1 = n1.getProx();
         }
-        // cria um nó auxiliar que aponta para o início da fila
-        No aux = this.inicio;
-        // cria uma string que vai armazenar os valores da fila
-        String s = "";
-        // percorre a fila até chegar ao fim
-        while (aux != null) {
-            // adiciona o valor do nó à string, seguido de uma vírgula
-            s += aux.getValor() + ",";
-            // avança para o próximo nó
-            aux = aux.getProx();
+        return str;
+    }
+
+    public int dequeue(){
+        if(this.isEmpty()){
+            System.out.println("Fila vazia...");
+            return -1;
+        } else if(this.tamanho == 1) {
+            int v = this.inicio.getValor();
+            this.inicio = this.fim = null;
+            return v;
         }
-        // remove a última vírgula da string
-        s = s.substring(0, s.length() - 1);
-        // retorna a string com os valores da fila
-        return s;
+        int v = this.inicio.getValor();
+        this.inicio = this.inicio.getProx();
+        this.tamanho--;
+        return v;
     }
 
 
@@ -107,6 +111,9 @@ class FilaDinamica {
         System.out.println(fd.getInicio().getValor());
         System.out.println(fd.getFim().getValor());
 
+        System.out.println(fd.toString());
+
+        fd.dequeue();
         System.out.println(fd.toString());
     }
 }
