@@ -61,9 +61,7 @@ class FilaEstatica {
         this.qtdElementos--;
         return ret;
     }
-}
-public class Main
-{
+
     public static void main(String[] args) {
         FilaEstatica fe = new FilaEstatica();
 
