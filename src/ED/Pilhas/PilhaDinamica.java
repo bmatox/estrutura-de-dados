@@ -49,9 +49,13 @@ public class PilhaDinamica {
     }
 
     public void push(int valor) {
+        // Cria um novo nó com o valor recebido
         No no = new No(valor);
+        // Faz o novo nó apontar para o antigo topo da pilha
         no.setProx(this.topo);
+        // Faz o topo da pilha apontar para o novo nó
         this.topo = no;
+        // Incrementa o tamanho da pilha em uma unidade
         this.tamanho++;
     }
 
@@ -93,6 +97,7 @@ public class PilhaDinamica {
         pd.pop();
         pd.pop();
         pd.imprimePilha();
+
     }
 }
 
