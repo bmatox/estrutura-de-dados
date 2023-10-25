@@ -1,6 +1,6 @@
-package aprendendo_listas.testes;
+package CursoLoiane.Listas.testes;
 
-import aprendendo_listas.ListaEncadeada;
+import CursoLoiane.Listas.ListaEncadeada;
 
 public class ListaEncadeadaTeste {
 

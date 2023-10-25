@@ -1,4 +1,4 @@
-package aprendendo_listas;
+package CursoLoiane.Listas;
 
 public class ListaEncadeada <T> {
 

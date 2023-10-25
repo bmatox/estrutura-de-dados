@@ -1,4 +1,4 @@
-package aprendendo_listas;
+package CursoLoiane.Listas;
 
 public class No<T> { //esse <T> faz com que a lista seja tipada de forma genérica, tendo em vista que não se sabe p tipo do elemento que está sendo trabalhado na lista.
 
